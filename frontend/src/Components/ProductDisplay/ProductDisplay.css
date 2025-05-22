@@ -86,6 +86,10 @@
     font-size: 14px;
 }
 
+.productdisplay-right-sizes div:hover{
+    background: #d2d2d2;
+}
+
 .productdisplay-right button{
     padding: 12px 25px;
     width: 150px;
@@ -286,8 +290,9 @@
     }
     .productdisplay-right-sizes div {
         padding: 10px 16px;
-        font-size: 14px;
+        font-size: 15px;
     }
+
     .productdisplay-right button{
         width: 130px;
         font-size: 15px;
