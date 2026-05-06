@@ -1,6 +1,5 @@
 import React, {createContext, useState, useEffect} from "react";
-export const backend_url = 'http://localhost:4000';
-
+import { backend_url } from "../App";
 export const ShopContext = createContext(null);
 
 const getDefaultCart = () => {
@@ -22,7 +21,7 @@ const ShopContextProvider = (props) => {
         .then((data)=>setAll_Product(data))
 
         if(localStorage.getItem("auth-token")){
-            fetch("http://localhost:4000/getcart",{
+            fetch(`${backend_url}/getcart`,{
                 method: "POST",
                 headers: {
                     Accept: "application/form-data",
@@ -40,7 +39,7 @@ const ShopContextProvider = (props) => {
     const addToCart = (itemId) => {
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
         if(localStorage.getItem("auth-token")){
-            fetch("http://localhost:4000/addtocart",{
+            fetch(`${backend_url}/addtocart`,{
                 method: "POST",
                 headers: {
                     Accept: "application/form-data",
@@ -57,7 +56,7 @@ const ShopContextProvider = (props) => {
     const removeFromCart = (itemId) => {
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
         if(localStorage.getItem("auth-token")){
-            fetch("http://localhost:4000/removefromcart",{
+            fetch(`${backend_url}/removefromcart`,{
                 method: "POST",
                 headers: {
                     Accept: "application/form-data",
