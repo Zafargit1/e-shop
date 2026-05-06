@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './NewCollections.css';
-import new_collection from '../Assets/new_collections';
 import Item from '../Item/Item';
+import { backend_url } from '../../App';
 
 
-const NewCollections = () => { 
+const NewCollections = () => {
+    
+    const [new_collection, setNew_collection] = useState([]);
+
+    useEffect( () => {
+        fetch(`${backend_url}/newcollections`)
+        .then((response)=>response.json())
+        .then((data)=>setNew_collection(data))
+    },[])
+
     return(
         <div className='new-collections'>
             <h1>NEW COLLECTIONS</h1>
