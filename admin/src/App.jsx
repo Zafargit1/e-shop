@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Admin from './Pages/Admin/Admin'
 
-export const backend_url = 'http://localhost:4000';
+export const backend_url = 'https://e-shop-backend-78uk.onrender.com';
 
 const App = () => {
   return (
